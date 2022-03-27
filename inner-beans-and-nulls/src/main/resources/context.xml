@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<bean id="user" class="pl.oremczuk.springtutorial.User">
+		<!-- <property name="name" value="Antoni"></property> -->
+		<!-- <property name="name"><null /></property> -->
+		<constructor-arg><null/></constructor-arg>
+		<property name="address">
+			<bean class="pl.oremczuk.springtutorial.Address">
+				<constructor-arg value="Komarówka Podlaska" />
+				<constructor-arg value="51-456" />
+				<constructor-arg value="Gminna" />
+				<constructor-arg value="25" />
+			</bean>
+		</property>
+	</bean>
+</beans>

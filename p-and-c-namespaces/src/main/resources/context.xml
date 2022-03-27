@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:c="http://www.springframework.org/schema/c"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<bean id="locale" class="java.util.Locale"
+		factory-method="getDefault" />
+	<!-- <bean id="someUser" class="pl.oremczuk.springtutorial.User"> <constructor-arg 
+		value="Dobromir" /> <constructor-arg value="35" /> <constructor-arg ref="locale" 
+		/> </bean> <bean id="someBean" class="pl.oremczuk.springtutorial.SomeBean"> 
+		<property name="stringValue" value="some String value" /> <property name="intValue" 
+		value="4500" /> <property name="user" ref="someUser" /> </bean> -->
+
+	<!-- <bean id="someUser2" class="pl.oremczuk.springtutorial.User"
+		c:name="Wieńczysław" c:age="65" c:locale-ref="locale" />
+		
+	<bean id="someBean2" class="pl.oremczuk.springtutorial.SomeBean"
+		p:stringValue="another String value" p:intValue="5000"
+		p:user-ref="someUser2" /> -->
+
+	<bean id="someUser3" class="pl.oremczuk.springtutorial.User"
+		c:_0="Wieńczysław" c:_1="65" c:_2-ref="locale" />
+		
+	<bean id="someBean3" class="pl.oremczuk.springtutorial.SomeBean"
+		p:stringValue="another String value" p:intValue="5000"
+		p:user-ref="someUser3" />	
+
+
+
+</beans>

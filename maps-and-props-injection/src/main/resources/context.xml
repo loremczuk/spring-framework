@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd"
+	xmlns:util="http://www.springframework.org/schema/util">
+
+	<bean id="Polska" class="java.lang.String">
+		<constructor-arg value="POLAND" />
+	</bean>
+
+	<bean id="someBean" class="pl.oremczuk.springtutorial.SomeBean">
+		<property name="settings">
+			<props>
+				<prop key="klucz1">wartość1</prop>
+				<prop key="klucz2">wartość2</prop>
+				<prop key="klucz3">wartość3</prop>
+			</props>
+		</property>
+		<property name="locales">
+			<map>
+				<entry key="Niemcy" value="GERMANY" />
+				<entry key="Francja" value="FRANCE" />
+				<entry key="Polska" value-ref="Polska" />
+				<!-- <util:constant static-field="java.util.Locale.GERMANY"/> -->
+				<!-- </entry> -->
+			</map>
+
+		</property>
+
+	</bean>
+
+</beans>

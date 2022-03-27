@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<bean id="myLogger"
+		class="pl.oremczuk.springtutorial.implementations.LoggerImpl">
+		<property name="name" value="MójLogger"></property>
+		<property name="version" value="2"></property>
+	</bean>
+	<bean id="myRepository"
+		class="pl.oremczuk.springtutorial.implementations.UsersRepositoryImpl">
+		<constructor-arg ref="myLogger"/>
+		<!--constructor-arg index="2" value="db"/-->
+		<!--constructor-arg type="java.lang.String" value="db"/    
+		choć tu i tak nie odróżni bo obydwa parametry to String -->  
+		<constructor-arg name="dbName" value="db"/>
+		<constructor-arg value="http://127.0.0.1:1234/"/>
+	</bean>
+
+</beans>
